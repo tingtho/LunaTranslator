@@ -386,6 +386,7 @@
 			"附带上下文个数": 0,
 			"cachecontext": false,
 			"use_max_completion_tokens": false,
+			"no_max_tokens": false,
 			"API接口地址": "",
 			"SECRET_KEY": "",
 			"使用自定义promt": false,
@@ -502,6 +503,10 @@
 			},
 			"use_max_completion_tokens": {
 				"name": "使用_max_completion_tokens",
+				"type": "switch"
+			},
+			"no_max_tokens": {
+				"name": "不发送max_tokens参数(GPT-5-nano等)",
 				"type": "switch"
 			},
 			"max_tokens": {

@@ -206,6 +206,7 @@
             "modellistcache": [],
             "s": "",
             "use_max_completion_tokens": false,
+            "no_max_tokens": false,
             "customparams": []
         },
         "argstype": {
@@ -270,6 +271,10 @@
             },
             "use_max_completion_tokens": {
                 "name": "使用_max_completion_tokens",
+                "type": "switch"
+            },
+            "no_max_tokens": {
+                "name": "不发送max_tokens参数(GPT-5-nano等)",
                 "type": "switch"
             },
             "max_tokens": {

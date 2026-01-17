@@ -120,9 +120,10 @@ class chatgptlike(cishubase):
             model=self.config["model"],
             messages=message,
             system=sysprompt,
-            max_tokens=self.config["max_tokens"],
             temperature=temperature,
         )
+        if not self.config.get("no_max_tokens", False):
+            data["max_tokens"] = self.config["max_tokens"]
         data.update(extrabody)
         headers.update(extraheader)
         response = self.proxysession.post(

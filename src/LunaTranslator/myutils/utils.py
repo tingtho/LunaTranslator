@@ -974,8 +974,10 @@ def common_create_gpt_data(config: dict, message, extrabody):
         temperature=temperature,
     )
     use_max_completion_tokens = config.get("use_max_completion_tokens", False)
-    key_tokens = ("max_tokens", "max_completion_tokens")[use_max_completion_tokens]
-    data.update({key_tokens: config["max_tokens"]})
+    no_max_tokens = config.get("no_max_tokens", False)
+    if not no_max_tokens:
+        key_tokens = ("max_tokens", "max_completion_tokens")[use_max_completion_tokens]
+        data.update({key_tokens: config["max_tokens"]})
     if config.get("流式输出", False):
         data.update(stream=True)
     if config.get("frequency_penalty_use", False):
